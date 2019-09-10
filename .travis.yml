@@ -1,25 +1,11 @@
 language: cpp
 dist: bionic
 
-matrix:
-  include:
-    - os: linux
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-          packages:
-            - g++-7
-      env:
-         - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
-
-compiler:
-  - gcc
-
 before_install:
-  - eval "${MATRIX_EVAL}"
+  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+  - sudo apt-get install gcc-7.4.0 -y
   - pip install --user cpp-coveralls
-  - sudo apt install -y gcc cmake lcov ggcov build-essential libboost-all-dev git-core doxygen
+  - sudo apt install -y cmake lcov ggcov build-essential libboost-all-dev git-core doxygen
 
 script:
   - mkdir build && cd build
