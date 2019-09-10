@@ -25,4 +25,3 @@ This is a small project I created in order to teach myself C++. It will be imple
 Copyright (c) Ian R. O'Brien. All rights reserved.
 
 Licensed under the [MIT](LICENSE.txt) License.
-
