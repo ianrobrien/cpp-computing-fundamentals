@@ -21,16 +21,13 @@ before_install:
   - pip install --user cpp-coveralls
   - sudo apt install -y gcc cmake lcov ggcov build-essential libboost-all-dev git-core doxygen
 
-before_script:
-  - mkdir build
-  - cd build
-
 script:
-  - cmake ..
+  - mkdir build && cd build
+  - cmake -DCOVERALLS=ON -DCMAKE_BUILD_TYPE=Debug ..
   - make cpp-computing-fundamentals cpp-computing-fundamentals-coverage
 
 after_success:
-  - coveralls --exclude lib --exclude tests --gcov-options '\-lp'
+  - coveralls --root . -E ".*gtest.*" -E ".*CMakeFiles.*"
 
 addons:
   apt:
