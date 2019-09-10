@@ -2,8 +2,6 @@ language: cpp
 dist: bionic
 
 before_install:
-  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
-  - sudo apt-get install gcc-7.4.0 -y
   - pip install --user cpp-coveralls
   - sudo apt install -y cmake lcov ggcov build-essential libboost-all-dev git-core doxygen
 
@@ -18,3 +16,8 @@ after_success:
 addons:
   apt:
     update: true
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - gcc-7.4.0
+    - g++-7.4.0
