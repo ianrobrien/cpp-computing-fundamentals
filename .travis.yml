@@ -18,6 +18,7 @@ compiler:
 
 before_install:
   - eval "${MATRIX_EVAL}"
+  - pip install --user cpp-coveralls
   - sudo apt install -y gcc cmake lcov ggcov build-essential libboost-all-dev git-core
 
 before_script:
@@ -25,9 +26,12 @@ before_script:
   - cd build
 
 script:
+  - ./configure --enable-gcov
   - cmake ..
   - make cpp-computing-fundamentals cpp-computing-fundamentals-coverage
-  - mv coverage/ ../docs
+
+after_success:
+  - coveralls --exclude lib --exclude tests --gcov-options '\-lp'
 
 addons:
   apt:
