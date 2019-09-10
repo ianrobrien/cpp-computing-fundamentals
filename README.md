@@ -1,6 +1,6 @@
 # cpp-computing fundamentals
 
-[![pipeline status](https://gitlab.com/ianrobrien/cpp-computing-fundamentals/badges/master/pipeline.svg)](https://gitlab.com/ianrobrien/cpp-computing-fundamentals/commits/master)
+[![pipeline status](https://travis-ci.org/ianrobrien/cpp-computing-fundamentals.svg?branch=master)](https://github.com/ianrobrien/cpp-computing-fundamentals/commits/master)
 [![coverage report](https://gitlab.com/ianrobrien/cpp-computing-fundamentals/badges/master/coverage.svg)](https://ianrobrien.gitlab.io/cpp-computing-fundamentals/coverage/index.html)
 [![doxygen](https://img.shields.io/badge/doxygen-reference-blue.svg)](https://ianrobrien.gitlab.io/cpp-computing-fundamentals)
 

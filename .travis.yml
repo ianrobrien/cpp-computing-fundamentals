@@ -4,7 +4,7 @@ compiler:
   - gcc
 
 before_install:
-  - sudo apt update && apt install -y gcc cmake lcov ggcov build-essential libboost-all-dev git-core
+  - sudo apt update && sudo apt install -y gcc cmake lcov ggcov build-essential libboost-all-dev git-core
 
 before_script:
   - mkdir build
