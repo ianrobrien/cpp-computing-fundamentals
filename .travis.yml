@@ -4,14 +4,13 @@ compiler:
   - gcc
 
 before_install:
-  - sudo apt-get update -qq
-  - sudo apt-get install -qq build-essential cmake git-core lcov ggcov 
-  - sudo apt-get install libboost-all-dev
+  - apt update && apt install -y gcc cmake lcov ggcov build-essential libboost-all-dev git-core
 
 before_script:
   - mkdir build
   - cd build
+
+script:
   - cmake ..
-
-script: make
-
+  - make cpp-computing-fundamentals cpp-computing-fundamentals-coverage
+  - mv coverage/ ../docs
